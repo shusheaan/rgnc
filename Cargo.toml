@@ -1,0 +1,24 @@
+[package]
+name = "rgnc"
+version = "0.1.0"
+edition = "2021"
+description = "Robust reentry trajectory optimization with scenario-based robust optimization"
+build = "build.rs"
+
+[dependencies]
+nalgebra = { version = "0.33", features = ["serde-serialize"] }
+clarabel = "0.9"
+serde = { version = "1", features = ["derive"] }
+serde_yaml = "0.9"
+csv = "1"
+rand = "0.8"
+rand_distr = "0.4"
+rayon = "1"
+anyhow = "1.0"
+
+[build-dependencies]
+bindgen = "0.72"
+
+[features]
+gurobi = []
+default = ["gurobi"]
